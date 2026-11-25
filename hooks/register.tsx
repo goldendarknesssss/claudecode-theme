@@ -128,19 +128,8 @@ export const register: Register = on => {
       return next(e)
     }
     const stage = STAGES.find(s => String(s) === match[1]) ?? 0
-    const { Box, Svg } = $.ui.resolve(e)
-    const alt = `A white-haired woman among red roses, stage ${STAGE_NAMES[stage]}`
+    const { Svg } = $.ui.resolve(e)
 
-    // Each Svg holds at most 131,072 characters and the whole backdrop about twice that, so the scene comes as two
-    // stacked Svgs; the desktop app draws every one of them over the whole backdrop, in order.
-    return (
-      <Box position="relative" width="100%" height="100%">
-        {sceneLayers(stage, FIGURE, 'main').map((source, i) => (
-          <Box position="absolute" top={0} left={0} right={0} bottom={0}>
-            <Svg source={source} alt={i === 0 ? alt : ' '} />
-          </Box>
-        ))}
-      </Box>
-    )
+    return <Svg source={sceneLayers(stage, FIGURE, 'main')[0] ?? ''} alt={`A white-haired woman among red roses, stage ${STAGE_NAMES[stage]}`} />
   })
 }

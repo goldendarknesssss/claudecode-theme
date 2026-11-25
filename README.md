@@ -41,6 +41,5 @@ The theme draws in the Claude desktop and mobile apps only; the terminal, editor
 
 ## Notes
 
-- The app only accepts pure vector backdrops, so the figure is a posterized trace of an illustration (26 colors, and 22 more for the face), not the original picture.
-- One Svg holds at most 131,072 characters, and the whole backdrop about twice that, so the scene is two stacked Svgs of about 230,000 characters in all.
+- The app only accepts pure vector backdrops, so the figure is a posterized trace of an illustration (about 20 colors, in one SVG under 131,072 characters), not the original picture.
 - The portrait is traced from an illustration whose rights belong to its original artist.
